@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import stk.npcgen.backend.restservice.records.Greeting;
+import stk.npcgen.backend.restservice.records.Name;
 
 @RestController
-public class GreetingController {
+public class NameController {
 
 	private final AtomicLong counter = new AtomicLong();
 
-	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(generateName()));
+	@GetMapping("/name")
+	public Name name(@RequestParam(value = "name", defaultValue = "World") String name) {
+		return new Name(counter.incrementAndGet(), String.format(generateName()));
 	}
 	
     private static final String[] FIRST_NAMES = {

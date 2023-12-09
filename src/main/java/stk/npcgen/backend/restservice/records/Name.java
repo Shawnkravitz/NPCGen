@@ -1,5 +1,5 @@
 package stk.npcgen.backend.restservice.records;
 
-public record Greeting(long id, String content) {
+public record Name(long id, String content) {
 
 }
